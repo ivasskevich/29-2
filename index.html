@@ -20,15 +20,15 @@
         document.write("<br>Second: ");
         for (let i = 0; i < numb2.length; i++) { 
             document.write(numb2[i] + " ");
-        }
+        } 
 
        
-        function mergeArrays1(arr1, arr2) {
-            let mergedArr = arr1.concat(arr2);
+        function Arrays1(arr1, arr2) {
+            let mergArr = arr1.concat(arr2);
             let uniqueArr = [];
 
-            for (let i = 0; i < mergedArr.length; i++) {
-                let c = mergedArr[i];
+            for (let i = 0; i < mergArr.length; i++) {
+                let c = mergArr[i];
                 if (!uniqueArr.includes(c)) {
                     uniqueArr.push(c);
                 }
@@ -36,41 +36,41 @@
             return uniqueArr;
         }
 
-        let rez1 = mergeArrays1(numb1, numb2); 
+        let rez1 = Arrays1(numb1, numb2); 
         for (let i = 0; i < rez1.length; i++) {
             document.write(rez1[i] + " ");
         }
 
         
-        function mergeArrays2(arr1, arr2) {
-            let commonElems = [];
+        function Arrays2(arr1, arr2) {
+            let headElm = [];
             for (let i = 0; i < arr1.length; i++) {
                 let d = arr1[i];
-                if (arr2.includes(d) && !commonElems.includes(d)) {
-                    commonElems.push(d);
+                if (arr2.includes(d) && !headElm.includes(d)) {
+                    headElm.push(d);
                 }
             }
-            return commonElems;
+            return headElm;
         }
 
-        let rez2 = mergeArrays2(numb1, numb2); 
+        let rez2 = Arrays2(numb1, numb2); 
         for (let i = 0; i < rez2.length; i++) {
             document.write(rez2[i] + " ");
         }
 
         
-        function mergeArrays3(arr1, arr2) {
-            let elemsNotInArr2 = [];
+        function Arrays3(arr1, arr2) {
+            let outOffArr = [];
             for (let i = 0; i < arr1.length; i++) {
                 let e = arr1[i];
                 if (!arr2.includes(e)) {
-                    elemsNotInArr2.push(e);
+                    outOffArr.push(e);
                 }
             }
-            return elemsNotInArr2;
+            return outOffArr;
         }
 
-        let rez3 = mergeArrays3(numb1, numb2); 
+        let rez3 = Arrays3(numb1, numb2); 
         for (let i = 0; i < rez3.length; i++) {
             document.write(rez3[i] + " ");
         }
