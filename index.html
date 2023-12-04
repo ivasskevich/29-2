@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        
+        let numb1 = [2, 4, 6, 8, 10]; 
+        let numb2 = [3, 6, 9, 12, 15]; 
+
+        document.write("First: ");
+        for (let i = 0; i < numb1.length; i++) { 
+            document.write(numb1[i] + " ");
+        }
+        document.write("<br>Second: ");
+        for (let i = 0; i < numb2.length; i++) { 
+            document.write(numb2[i] + " ");
+        }
+
+       
+        function mergeArrays1(arr1, arr2) {
+            let mergedArr = arr1.concat(arr2);
+            let uniqueArr = [];
+
+            for (let i = 0; i < mergedArr.length; i++) {
+                let c = mergedArr[i];
+                if (!uniqueArr.includes(c)) {
+                    uniqueArr.push(c);
+                }
+            }
+            return uniqueArr;
+        }
+
+        let rez1 = mergeArrays1(numb1, numb2); 
+        for (let i = 0; i < rez1.length; i++) {
+            document.write(rez1[i] + " ");
+        }
+
+        
+        function mergeArrays2(arr1, arr2) {
+            let commonElems = [];
+            for (let i = 0; i < arr1.length; i++) {
+                let d = arr1[i];
+                if (arr2.includes(d) && !commonElems.includes(d)) {
+                    commonElems.push(d);
+                }
+            }
+            return commonElems;
+        }
+
+        let rez2 = mergeArrays2(numb1, numb2); 
+        for (let i = 0; i < rez2.length; i++) {
+            document.write(rez2[i] + " ");
+        }
+
+        
+        function mergeArrays3(arr1, arr2) {
+            let elemsNotInArr2 = [];
+            for (let i = 0; i < arr1.length; i++) {
+                let e = arr1[i];
+                if (!arr2.includes(e)) {
+                    elemsNotInArr2.push(e);
+                }
+            }
+            return elemsNotInArr2;
+        }
+
+        let rez3 = mergeArrays3(numb1, numb2); 
+        for (let i = 0; i < rez3.length; i++) {
+            document.write(rez3[i] + " ");
+        }
+    </script>
+</body>
+
+</html>
